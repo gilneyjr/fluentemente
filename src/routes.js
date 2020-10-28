@@ -29,4 +29,39 @@ routes.post('/users', async (request, response) => {
     return response.json({success: true})
 })
 
+
+
+// Static Pages: FIX IT AFTER [BEGIN]
+const path = require('path')
+
+routes.get('/', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
+})
+
+routes.get('/entrar', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'login.html'))
+})
+
+routes.post('/entrar', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'decks.html'))
+})
+
+routes.get('/novo-usuario', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'signup.html'))
+})
+
+routes.post('/novo-usuario', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'login.html'))
+})
+
+routes.get('/baralhos', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'decks.html'))
+})
+
+routes.get('/cartas', (request, response) => {
+    response.sendFile(path.resolve(__dirname, '..', 'public', 'cards.html'))
+})
+
+// Static Pages: FIX IT AFTER [END]
+
 module.exports = routes
