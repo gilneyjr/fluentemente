@@ -1,4 +1,64 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluentemente</title>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/fluentemente2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="bgimg w3-display-container" id="background">
+    <!-- Begin Header -->
+    <header class="w3-row w3-container w3-padding-16" id="header">
+      <!-- Logo -->
+      <div class="w3-col s2 l1">
+        <a href="#home" class="logo">
+          <img src="/assets/images/logo.svg">
+        </a>
+      </div>
+      <!-- Naviagtion Bar -->
+      <div class="w3-col m10 l11 w3-hide-small w3-text-white">
+        <div class="w3-bar">
+          <a class="w3-bar-item w3-right btn btn-bordered" href="/signup">
+            Entrar
+          </a>
+          <a class="w3-bar-item w3-right btn" href="#about">
+            Sobre
+          </a>
+          <a class="w3-bar-item w3-right btn" href="#contact">
+            Contato
+          </a>
+
+          <!-- <a class="w3-bar-item w3-right btn" href="#contact">
+            <i class="material-icons">menu</i>
+          </a> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="w3-row-padding w3-text-white" id="content">
+      <div class="w3-col l4 w3-center" id="login">
+        <h2 class="w3-xlarge">Cadastre-se no Fluentemente</h2>
+        <form>
+          <label class="w3-left" for="user">Email</label>
+          <input type="text" name="user" id="user"/>
+          <label class="w3-left" for="pass">Senha</label>
+          <input type="password" name="pass" id="pass"/>
+          <input class="w3-right" type="submit" name="send" value="Entrar">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script> </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang=pt-br>
     <head>
         <meta charset="utf8"/>
@@ -7,10 +67,10 @@
     <body>
         <div class="divEntrar">
             <h1>Cadastre-se no FluenteMente</h1>
-            <form action="/novo-usuario" method="post">
+            <form action="/signup" method="post">
                 <label for="username">E-mail:</label>
                 <br>
-                <input type="text" id="username" name="username"><br>
+                <input type="text" id="name" name="name"><br>
                 <label for="username">Nome de Usuário:</label>
                 <br>
                 <input type="text" id="username" name="username">
@@ -30,4 +90,4 @@
             </form>
         </div>
     </body>
-</html>
+</html> -->

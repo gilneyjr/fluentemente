@@ -30,13 +30,22 @@ routes.post('/users', async (request, response) => {
 })
 
 
+// Routes to static items
+const path = require('path')
+const controllers = require('./controllers/controllers')
+
+console.log(path.resolve(__dirname, '..', 'public', 'images'))
+routes.use('/assets/styles', express.static(path.resolve(__dirname, '..', 'public', 'css')))
+routes.use('/assets/images', express.static(path.resolve(__dirname, '..', 'public', 'images')))
 
 // Static Pages: FIX IT AFTER [BEGIN]
-const path = require('path')
+
 
 routes.get('/', (request, response) => {
     response.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
 })
+
+routes.post('/signup', controllers.userController.signUp)
 
 routes.get('/entrar', (request, response) => {
     response.sendFile(path.resolve(__dirname, '..', 'public', 'login.html'))

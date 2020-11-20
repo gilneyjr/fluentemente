@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html lang=pt-br>
-    <head>
-        <meta charset="utf8"/>
-        <title>FluenteMente - Início</title>
-    </head>
-    <body>
-        <a href='/entrar'>Entrar</a>
-        <a href='/novo-usuario'>Cadastre-se</a>
-    </body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluentemente</title>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="/assets/styles/fluentemente2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="bgimg w3-display-container" id="background">
+    <!-- Begin Header -->
+    <header class="w3-row w3-container w3-padding-16" id="header">
+      <!-- Logo -->
+      <div class="w3-col s2 l1">
+        <a href="/" class="logo">
+          <img src="/assets/images/logo.svg">
+        </a>
+      </div>
+      <!-- Naviagtion Bar -->
+      <div class="w3-col m10 l11 w3-hide-small w3-text-white">
+        <div class="w3-bar">
+          <a class="w3-bar-item w3-right btn btn-bordered" href="#signup" onclick="showSignUp()">
+            Cadastre-se
+          </a>
+          <a class="w3-bar-item w3-right btn" href="#about">
+            Sobre
+          </a>
+          <a class="w3-bar-item w3-right btn" href="#contact">
+            Contato
+          </a>
+
+          <!-- <a class="w3-bar-item w3-right btn" href="#contact">
+            <i class="material-icons">menu</i>
+          </a> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="w3-row-padding w3-text-white" id="content">
+      <div class="w3-col l8" id="text">
+          <h1 id="title">Para uma mente mais fluente.</h1>
+          <p>Fluentemente é um website de flashcards desenvolvido para auxiliar o aprendizado de uma nova língua. Crie seus próprios baralhos e cartões, defina lembretes de estudo, receba sugestões de frases e, o melhor de tudo, estude de maneira divertida e eficiente sem esquecer do conteúdo.</p>
+      </div>
+      <div class="w3-col l4 w3-center" id="login">
+        <h2 class="w3-xlarge">Entrar no Fluentemente</h2>
+        <form>
+          <label class="w3-left" for="email">Email</label>
+          <input type="text" name="email" id="email"/>
+          <label class="w3-left" for="pass">Senha</label>
+          <input type="password" name="pass" id="pass"/>
+          <input class="w3-right" type="submit" name="send" value="Entrar">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign in pop-up -->
+  <div class="w3-modal" id="pop-up">
+      <div class="w3-modal-content w3-animate-top w3-center" id="signup">
+        <span onclick="hideSignUp()" class="w3-display-topright btn-close">
+          <i class="material-icons">close</i>
+        </span>
+        <h2 class="w3-xlarge">Cadastre-se no Fluentemente</h2>
+        <div>
+          <label class="w3-left" for="name-signup">Nome</label>
+          <input type="text" name="name-signup" id="name-signup"/>
+          <label class="w3-left" for="email-signup">Email</label>
+          <input type="text" name="email-signup" id="email-signup"/>
+          <label class="w3-left" for="pass-signup">Senha</label>
+          <input type="password" name="pass-signup" id="pass-signup"/>
+          <div class="w3-bar" id="submit-bar">
+            <input class="w3-item w3-right" type="submit" name="send-signup" value="Cadastre-se" onclick="signUp()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script> </script>
+  <script type="text/javascript">
+    function showSignUp() {
+      document.getElementById('pop-up').style.display = "block";
+    }
+
+    function hideSignUp() {
+      document.getElementById('pop-up').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if(event.target.id == "pop-up") {
+        event.target.style.display = "none";
+      }
+    }
+
+    function signUp() {
+      var name_obj = document.querySelector("#name-signup")
+      var email_obj = document.querySelector("#email-signup")
+      var pass_obj = document.querySelector("#pass-signup")
+
+      var xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = function() {
+			  if(this.readyState == 4) {
+				  if(this.status == 200)
+            window.alert("Usuário cadastrado com sucesso")
+				  else {
+            window.alert("Return status = " + this.status)
+          }
+        }
+      };
+
+      xhttp.open('POST', '/signup', true)
+      xhttp.setRequestHeader('Content-type', 'application/json')
+      xhttp.send(JSON.stringify({ 
+        name: name_obj.value, 
+        email: email_obj.value, 
+        password: pass_obj.value
+      }))
+
+      name_obj.value=""
+      email_obj.value=""
+      pass_obj.value=""
+      hideSignUp()
+    }
+  </script>
+</body>
 </html>

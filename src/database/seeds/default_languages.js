@@ -3,7 +3,8 @@ exports.seed = async (knex) => {
         { name: 'Português' },
         { name: 'English' },
         { name: 'Español' },
-        { name: 'Deutsche' },
-        { name: 'Italiano' }
+        { name: 'Deutsch' },
+        { name: 'Italiano' },
+        { name: 'Français'}
     ])
 }
