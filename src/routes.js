@@ -34,8 +34,7 @@ routes.post('/users', async (request, response) => {
 const path = require('path')
 const controllers = require('./controllers/controllers')
 
-console.log(path.resolve(__dirname, '..', 'public', 'images'))
-routes.use('/assets/styles', express.static(path.resolve(__dirname, '..', 'public', 'css')))
+routes.use('/assets/styles', express.static(path.resolve(__dirname, '..', 'public', 'styles')))
 routes.use('/assets/images', express.static(path.resolve(__dirname, '..', 'public', 'images')))
 
 // Static Pages: FIX IT AFTER [BEGIN]
