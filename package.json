@@ -4,6 +4,7 @@
   "description": "Para uma mente mais fluente.",
   "main": "src/server.js",
   "scripts": {
+    "prod": "node src/server.js",
     "dev": "node-dev src/server.js --ignore-watch node_modules",
     "knex:migrate": "knex --knexfile knexfile.js migrate:latest",
     "knex:seed": "knex --knexfile knexfile.js seed:run"
@@ -17,6 +18,10 @@
     "email": "gilneyjnr@gmail.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gilneyjr/fluentemente.git"
+  },
   "devDependencies": {
     "node-dev": "^6.2.0"
   },
