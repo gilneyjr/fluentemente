@@ -1,0 +1,117 @@
+:root {
+    --greenish-blue: #028989;
+    --light-greenish-blue: #02acac;
+    --bg-color: #013737;
+}
+
+body, html {
+    height: 100%
+}
+
+body, h1, h2 {
+    font-family: "Raleway", sans-serif;
+    color: white;
+}
+
+#background {
+    background-color: var(--bg-color);
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.logo img {
+    height: 60px;
+    
+}
+
+.w3-bar .btn {
+    margin: 5px 5px 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 18px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.w3-bar .btn-bordered {
+    border: 1px solid white;
+}
+
+.w3-bar .btn:hover {
+    background-color: var(--greenish-blue);
+    border-color: transparent;
+}
+
+.w3-bar .btn:active {
+    background-color: var(--light-greenish-blue);
+}
+
+.w3-bar #mobile-menu-btn {
+    text-decoration: none;
+    outline: none;
+    padding: 10px;
+    border: 1px solid white;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.w3-bar #mobile-menu-btn:active {
+    border: 1px solid transparent;
+}
+
+.overlay {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #000000e6;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+  
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+  
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+  
+.overlay a:active {
+    color: #f1f1f1;
+}
+  
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    font-size: 60px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (max-width: 520px) {
+    .logo img {
+        height: 50px;
+    }
+}

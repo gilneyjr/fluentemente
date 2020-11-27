@@ -1,6 +1,6 @@
 const { request, response } = require('express')
 const express = require('express')
-const knex = require('./database/connection')
+const knex = require('../database/connection')
 
 const routes = express.Router()
 

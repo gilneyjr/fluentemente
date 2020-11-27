@@ -1,50 +1,18 @@
+const { urlencoded } = require('express')
 const express = require('express')
-const routes = require('./routes')
+const path = require('path')
 
 const app = express()
 
 // Possibilita ao express entender o corpo da requisição em formato json
 app.use(express.json())
-// Usa o arquivo de rotas
-app.use(routes)
+app.use(express.urlencoded({ extended: false }))
 
-// // Para acessar recursos estáticos como imagens (da pasta ./../uploads/)
-// app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')))
+// Set the routes of the system
+const user_routes = require(path.resolve(__dirname, 'routes', 'user-routes'))
+const global_routes = require(path.resolve(__dirname, 'routes', 'global-routes'))
+app.use(user_routes)
+app.use(global_routes)
 
-
-// // ====================== Testing =======================
-// users = [
-//     "Diego",
-//     "Cleiton",
-//     "Robson",
-//     "Daniel"
-// ]
-
-// // Query Params: Usuais para busca e filtragem de elementos
-// app.get('/users', (request, response) => {
-//     const search = request.query.search
-//     const filteredUsers = search ? users.filter(user => user.includes(search)) : users
-//     return response.json(filteredUsers);
-// })
-
-// // Request Param: Vêm na própria rota e identificam um recurso (opcionais)
-// app.get('/users/:id', (request, response) => {
-//     return response.json(users[request.params.id])
-// })
-
-// // Request Body
-// app.post('/users', (request, response) => {
-//     const data = request.body
-//     const user = {
-//         "name" : data.name,
-//         "email": data.email
-//     }
-
-//     return response.json(user)
-// })
-
-// // ======================================================
-
-
+// Make server listen at port 8080
 app.listen(8080)
-

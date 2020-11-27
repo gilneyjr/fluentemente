@@ -1,0 +1,35 @@
+#background {
+    background-image: url("/assets/images/background.png");
+}
+
+#content {
+    margin:auto;
+    margin-top: 10vh;
+    width: 86%;
+    padding-bottom: 30px;
+    text-align: left;
+}
+
+#content h1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#content p {
+    font-size: 24px;
+}
+
+#content h1::selection, #content p::selection {
+    background-color: #65dbdb;
+}
+
+@media screen and (max-width: 520px) {
+    #content h1 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+     
+    #content p {
+        font-size: 20px;
+    }    
+}

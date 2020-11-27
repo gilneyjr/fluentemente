@@ -1,6 +1,6 @@
 const knex = require('../database/connection')
 
-async function insert(name, email, password) {
+async function signup(name, email, password) {
     await knex('users').insert({
         name,
         email,
@@ -9,5 +9,5 @@ async function insert(name, email, password) {
 }
 
 module.exports = {
-    insert
+    signup
 }
