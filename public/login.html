@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluenteMente</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div id="background">
+        <!-- Begin Header -->
+        <header class="w3-row w3-container w3-padding-16" id="header">
+            <!-- Logo -->
+            <div class="w3-col s2 l1">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg">
+                </a>
+            </div>
+            <!-- Navigation Bar -->
+            <div class="w3-col m10 l11 w3-hide-small w3-text-white">
+                <div class="w3-bar">
+                    <a class="w3-bar-item w3-right btn btn-bordered" href="/signup"">
+                        Cadastre-se
+                    </a>
+                    <a class="w3-bar-item w3-right btn btn-bordered" href="/">
+                        Início
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="w3-col s10 w3-hide-medium w3-hide-large w3-text-white">
+                <div class="w3-bar">
+                    <span class="w3-bar-item w3-circle w3-xxlarge w3-right material-icons" id="mobile-menu-btn" onclick="showMenu()">
+                        menu
+                    </span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Content -->
+        <div class="w3-center" id="login">
+            <h2 class="w3-xlarge">Entre no FluenteMente</h2>
+            <form action="/login" method="POST">
+                <label class="w3-left" for="email">Email</label>
+                <input type="email" name="email" required>
+                <label class="w3-left" for="password">Senha</label>
+                <input type="password" name="password" required>
+                <div class="w3-bar" id="submit-bar">
+                    <input class="w3-item w3-right" type="submit" name="send" value="Cadastre-se">
+                </div>
+            </form>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="hideMenu()">&times;</a>
+            <div class="overlay-content">
+                <a href="/">Início</a>
+                <a href="/signup">Cadastre-se</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="/assets/scripts/signup.js"></script> -->
+    <script> </script>
+</body>
+</html>

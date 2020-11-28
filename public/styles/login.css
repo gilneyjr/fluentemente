@@ -1,0 +1,109 @@
+#background {
+    background-image: url("/assets/images/background.png");
+}
+
+#login {
+    color: black;
+    background-color: white;
+    padding: 20px 40px;
+    margin: auto;
+    margin-top: 7vh;
+    border-radius: 10px;
+    max-width: 448px;
+    min-width: 260px;
+}
+@media screen and (max-width: 520px) {
+    #login {
+        max-width: 86%;
+    }
+}
+
+#login h2 {
+    margin-bottom: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+#login label {
+    margin: 0 15px;
+}
+
+#login input {
+    margin: 3px 0px 20px 0px;
+}
+
+#login input[type=text], 
+#login input[type=password], 
+#login input[type=email] {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--greenish-blue);
+    width: 100%;
+    height: 30px;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 11pt;
+}
+
+#login input[type=text]:focus, 
+#login input[type=password]:focus, 
+#login input[type=email]:focus {
+    outline: none;
+    border: 1px solid #24cbcb;
+}
+
+#login input[type="submit"] {
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: var(--greenish-blue);
+    color: white;
+    white-space: nowrap;
+    outline: none;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#login input[type="submit"]:hover {
+    background-color: var(--light-greenish-blue);
+}
+
+#login input[type="submit"]:active {
+    background-color: var(--secondary-color);
+}
+
+#login .btn-close {
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: var(--greenish-blue);
+    color: white;
+    white-space: nowrap;
+    outline: none;
+
+    padding: 5px 5px 0 5px;
+
+    border-radius: 0 10px 0 10px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+#login .btn-close:hover {
+   background-color: var(--light-greenish-blue); 
+}
+
+#login .btn-close:active {
+   background-color: var(--secondary-color);
+}
+
+#submit-bar {
+    width: 100%
+}

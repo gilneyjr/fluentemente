@@ -1,52 +1,56 @@
 const path = require('path')
 const repository = require(path.resolve(__dirname, '..', 'repositories', 'user-repository'))
+const errors = require(path.resolve(__dirname, '..', 'errors', 'errors'))
 const bcrypt = require('bcrypt')
 
-function checkName(name) {
-	if(!name || !name.trim())
-		throw { status: 400, message: 'Nome inválido!'}
-	return name.trim()
+
+var signup_validation = {}
+
+signup_validation.valid_name = (name) => {
+	if(typeof name === 'string') {
+		name = name.trim()
+		if(name)
+			return name
+	}
+	throw new errors.Signup_Error('Nome inválido')
 }
 
-function checkEmail(email) {
-	if(!email || !email.trim())
-		throw { status: 400, message: 'E-mail inválido!'}
-	return email.trim()
+signup_validation.valid_email = (email) => {
+	if(typeof email === 'string') {
+		email = email.trim()
+		if(email || email.match(/.+@.+/))
+			return email
+	}
+	throw new errors.Signup_Error('Formato de e-mail inválido')
 }
 
-function checkPassword(password) {
-	if(!password || !password.trim())
-		throw { status: 400, message: 'Senha inválida!'}
-	return password.trim()
+signup_validation.valid_password = (password) => {
+	if(typeof password === 'string') {
+		password = password.trim()
+
+		if(password.lenght < 8)
+			throw new errors.Signup_Error('A senha não pode ter menos do que 8 caracteres')
+		if(password.lenght > 256)
+			throw new errors.Signup_Error('A senha não pode ter mais do que 256 caracteres')
+		return password
+	}
+	throw new errors.Signup_Error('Senha vazia ou nula')
 }
 
 async function signup(name, email, password) {
-	name = checkName(name)
-	email = checkEmail(email)
-	password = checkPassword(password)
-
-	var hashedPassword = ''
 	try {
-		hashedPassword = await bcrypt.hash(password, 10)
-	} catch (err) {
-		// TODO: Tratar erro
-	}
+		name = signup_validation.valid_name(name)
+		email = signup_validation.valid_email(email)
+		password = signup_validation.valid_password(password)
 
-	try {
+		const hashedPassword = await bcrypt.hash(password, 10)
 		await repository.signup(name, email, hashedPassword)
 	}
 	catch(err) {
-		// Unknown error
-		var code = 500
-		var msg = 'Erro desconhecido'
-
-		// email already exists
-		if(err.errno === 19) {
-			code = 422 // Unprocessable Entity: Syntax is ok, but semantic fails
-			msg = 'Email já existe'
-		}
-			
-		throw { code, msg }
+		if(err instanceof errors.Http_Error)
+			throw err
+		console.error('\n\n[INTERNAL ERROR]:\n'+err.stack + '\n\n');
+		throw new errors.Internal_Server_Error()
 	}
 }
 

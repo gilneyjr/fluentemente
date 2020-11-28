@@ -12,7 +12,7 @@ routes.get('/signup', (req, res) => {
 })
 
 routes.get('/login', (req, res) => {
-    return res.send('Falta implmentar o [GET] /login')
+    return res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'login.html'))
 })
 
 routes.use('/assets/styles', express.static(path.resolve(__dirname, '..', '..', 'public', 'styles')))

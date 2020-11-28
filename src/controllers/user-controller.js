@@ -1,5 +1,6 @@
 const path = require('path')
-const service = require(path.resolve(__dirname, '..', 'services', 'user-service'))
+const service = require('../services/user-service')
+const errors = require('../errors/errors')
 
 async function signup(request, response) {
 	const {
@@ -8,19 +9,23 @@ async function signup(request, response) {
 		password,
 	} = request.body
 
-	await service.signup(name, email, password)
-	return response.redirect('/')
-
-	// try {
-	// 	await service.signUp(name, email, password);
-	// 	return response.sendStatus(200); // Ok
-	// }
-	// catch(err) {
-	// 	return response.status(err.code).send(err.msg)
-	// }
+	try {
+		await service.signup(name, email, password)
+		return response.redirect('/')
+	} catch (err) {
+		if(err instanceof errors.Http_Error) {
+			console.log(err.message)
+			response.status(err.status)
+		}
+		else
+			return response.status(500).send('Internal Server Error')
+		return response.redirect('/signup')
+	}
 }
 
 function login(request, response) {
+	const { email, password } = request.body
+
 	return response.send('Falta implementar o [POST] /login')
 }
 
