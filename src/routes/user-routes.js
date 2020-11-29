@@ -1,11 +1,27 @@
 const express = require('express')
-const path = require('path')
-const controller = require(path.resolve(__dirname, '..', 'controllers', 'user-controller'))
+const controller = require('../controllers/user-controller')
 
-const routes = express.Router()
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated())
+        return res.redirect('/decks')
+    next()
+}
 
-routes.post('/signup', controller.signup)
-routes.post('/login', controller.login)
-routes.post('/logout', controller.logout)
+module.exports = function(passport) {
+    const routes = express.Router()
 
-module.exports = routes
+    routes.post('/signup', checkAuthenticated, controller.signup)
+
+    routes.post('/login', checkAuthenticated, passport.authenticate(
+        'local', 
+        {
+            successRedirect: '/',
+            failureRedirect: '/login'
+            // ,failureFlash: true // TODO: See flash
+        }
+    ))
+    
+    routes.delete('/logout', controller.logout)
+
+    return routes
+}

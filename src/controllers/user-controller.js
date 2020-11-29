@@ -1,4 +1,3 @@
-const path = require('path')
 const service = require('../services/user-service')
 const errors = require('../errors/errors')
 
@@ -23,18 +22,12 @@ async function signup(request, response) {
 	}
 }
 
-function login(request, response) {
-	const { email, password } = request.body
-
-	return response.send('Falta implementar o [POST] /login')
-}
-
 function logout(request, response) {
-	return response.send('Falta implementar o [POST] /logout')
+	request.logOut()
+	return response.redirect('/')
 }
 
 module.exports = {
 	signup,
-	login,
 	logout
 }

@@ -24,9 +24,30 @@ class EmailAlreadyExistError extends Http_Error {
     }
 }
 
+class EmailDoesNotExistError extends Http_Error {
+    constructor(message) {
+        super(403, message)
+    }
+}
+
+class IdDoesNotExistError extends Http_Error {
+    constructor(message) {
+        super(403, message)
+    }
+}
+
+class PasswordDoesNotMatch extends Http_Error {
+    constructor(message) {
+        super(403, message)
+    }
+}
+
 module.exports = {
     Http_Error,
     Internal_Server_Error,
     Signup_Error,
-    EmailAlreadyExistError
+    EmailAlreadyExistError,
+    EmailDoesNotExistError,
+    IdDoesNotExistError,
+    PasswordDoesNotMatch,
 }

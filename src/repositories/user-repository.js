@@ -17,6 +17,35 @@ async function signup(name, email, password) {
     }
 }
 
+async function findByEmail(email) {
+    try {
+        const user = await knex('users').where({ email }).first()
+        if(!user)
+            throw new errors.EmailDoesNotExistError('E-mail não existe')
+        return user
+
+    } catch(err) {
+        if(err instanceof errors.Http_Error)
+            throw err
+        throw new errors.Internal_Server_Error()
+    }
+}
+
+async function findById(id) {
+    try {
+        const user = await knex('users').where({ id }).first()
+        if(!user)
+            throw new errors.IdDoesNotExistError('Id não existe')
+        return user
+    } catch(err) {
+        if(err instanceof errors.Http_Error)
+            throw err
+        throw new errors.Internal_Server_Error()
+    }
+}
+
 module.exports = {
-    signup
+    signup,
+    findByEmail,
+    findById
 }
