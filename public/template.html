@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluentemente</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="/assets/styles/test.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/assets/styles/icons.css"></head>
+</head>
+<body>
+    <div class="flex-container" id="header">
+        <a class="w3-bar-item w3-left w3-hover-opacity" href="/" data-link>
+            <img src="/assets/images/logo.svg" alt="logo.svg">
+        </a>
+        <div class="flex-container">
+            <div class="dropdown">
+                <a class="w3-hover-opacity" href="javascript:void(0)" id="menu-btn"><i class="fas fa-ellipsis-v"></i></a>
+                <div class="dropdown-content w3-bar-block w3-border" id="menu-dropdown">
+                    <a class="w3-bar-item w3-button w3-left-align dropdown-item" href="#config">Configurações</a>
+                    <a class="w3-bar-item w3-button w3-left-align dropdown-item" onclick="document.querySelector('#logout-form').submit()">Sair</a>
+                    <form action="/logout" method="POST" style="display: hidden" id="logout-form"></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="flex-container" id="title"></div>
+        <hr>
+        <div class="w3-row" id="list"></div>
+        <div id="mobile-menu" class="overlay">
+            <a href="javascript:void(0)" class="close-btn" id="close-overlay"><span class="icon-close"></span></a>
+            <div class="overlay-content" id="mobile-menu-content">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/assets/scripts/template.js"></script>
+</body>
+</html>

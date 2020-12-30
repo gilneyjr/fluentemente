@@ -22,8 +22,7 @@ body, h1, h2 {
 }
 
 .logo img {
-    height: 60px;
-    
+    height: 50px;
 }
 
 .w3-bar .btn {
@@ -76,7 +75,7 @@ body, h1, h2 {
     right: 0;
     background-color: #000000e6;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.4s;
 }
   
 .overlay-content {

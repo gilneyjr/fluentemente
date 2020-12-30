@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="21.040726mm"
-   height="21.040726mm"
-   viewBox="0 0 21.040726 21.040725"
+   width="10.583333mm"
+   height="10.633199mm"
+   viewBox="0 0 10.583333 10.633198"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
@@ -44,8 +44,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.5762314"
-     inkscape:cx="38.501193"
-     inkscape:cy="36.523214"
+     inkscape:cx="38.314614"
+     inkscape:cy="36.523114"
      inkscape:document-units="mm"
      inkscape:current-layer="g2750"
      inkscape:document-rotation="0"
@@ -68,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,13 +77,13 @@
      id="layer9"
      inkscape:label="Logo 3"
      style="display:inline"
-     transform="translate(-83.711113,-78.277091)">
+     transform="translate(-83.760478,-78.277117)">
     <g
        id="g2750"
        transform="matrix(0.57741178,0,0,0.57741178,58.450264,61.399621)">
       <g
          id="g2605"
-         transform="matrix(1.842923,0,0,1.8517095,-99.089812,-50.460442)"
+         transform="matrix(0.931347,0,0,0.93578732,-28.394598,-11.042895)"
          style="fill:#ffffff;fill-opacity:1">
         <path
            id="path1796-6-0-6"

@@ -2,9 +2,7 @@ const repository = require('../repositories/user-repository')
 const errors = require('../errors/errors')
 const bcrypt = require('bcrypt')
 
-var signup_validation = {}
-
-valid_name = (name) => {
+function valid_name(name) {
 	if(typeof name === 'string') {
 		name = name.trim()
 		if(name)
@@ -13,7 +11,7 @@ valid_name = (name) => {
 	throw new errors.Signup_Error('Nome inválido')
 }
 
-valid_email = (email) => {
+function valid_email(email) {
 	if(typeof email === 'string') {
 		email = email.trim()
 		if(email || email.match(/.+@.+/))

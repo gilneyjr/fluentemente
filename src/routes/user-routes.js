@@ -9,19 +9,20 @@ function checkAuthenticated(req, res, next) {
 
 module.exports = function(passport) {
     const routes = express.Router()
-
-    routes.post('/signup', checkAuthenticated, controller.signup)
-
-    routes.post('/login', checkAuthenticated, passport.authenticate(
+    const authenticate = passport.authenticate(
         'local', 
         {
             successRedirect: '/',
             failureRedirect: '/login'
             // ,failureFlash: true // TODO: See flash
         }
-    ))
+    )
+
+    routes.post('/signup', checkAuthenticated, controller.signup, authenticate)
+
+    routes.post('/login', checkAuthenticated, authenticate)
     
-    routes.delete('/logout', controller.logout)
+    routes.post('/logout', controller.logout)
 
     return routes
 }

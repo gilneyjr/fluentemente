@@ -1,7 +1,7 @@
 const service = require('../services/user-service')
 const errors = require('../errors/errors')
 
-async function signup(request, response) {
+async function signup(request, response, next) {
 	const {
 		name,
 		email,
@@ -10,7 +10,7 @@ async function signup(request, response) {
 
 	try {
 		await service.signup(name, email, password)
-		return response.redirect('/')
+		return next()
 	} catch (err) {
 		if(err instanceof errors.Http_Error) {
 			console.log(err.message)
@@ -24,7 +24,7 @@ async function signup(request, response) {
 
 function logout(request, response) {
 	request.logOut()
-	return response.redirect('/')
+	return response.redirect('/login')
 }
 
 module.exports = {

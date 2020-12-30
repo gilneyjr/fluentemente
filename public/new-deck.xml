@@ -1,0 +1,6 @@
+<h1>Novo Baralho</h1>
+<form action="/api/new-deck" method="POST">
+    <label for="name">Nome</label>
+    <input type="text" id="name" name="name">
+    <input type="button" value="Criar" id="submit">
+</form>

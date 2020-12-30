@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluentemente</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="/assets/styles/test.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="flex-container" id="header">
+        <a class="w3-bar-item w3-left w3-hover-opacity" href="/">
+            <img src="/assets/images/logo.svg" alt="logo.svg">
+        </a>
+        <div class="flex-container">
+            <a class="w3-hide-small w3-hide-medium w3-hover-opacity btn" href="#"><span id="name"></span><img src="/assets/images/user-default.svg"></a>
+            
+            <a class="w3-hide-large w3-hover-opacity" href="javascript:void(0)" id="menu-btn"><i class="fas fa-bars"></i></a>
+        </div>
+    </div>
+    <div id="content">
+        <div class="flex-container" id="title">
+            <a href="/decks">Baralhos</a>
+            <div class="flex-container">
+                <span class="flex-container" id="new-btn">
+                    <i class="fas fa-plus"></i>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-row" id="deck-list">
+            <span class="w3-col l3 m6 s12"><a href="#">Este é um texto extremamente grande</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test...</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test...</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test...</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test...</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+            <span class="w3-col l3 m6 s12"><a href="#">Test</a></span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // On load and on resize
+        window.onload = function () { 
+            var list = document.querySelector('#deck-list');
+            var top = document.querySelector('#header').offsetHeight
+            top += document.querySelector('#title').offsetHeight
+            top += document.querySelector('#content hr').offsetHeight
+            var style = window.getComputedStyle(list);
+            var marginTop = style.getPropertyValue('margin-top').substr(0,style.getPropertyValue('margin-top').length-2)
+            var marginBottom = style.getPropertyValue('margin-bottom').substr(0,style.getPropertyValue('margin-bottom').length-2)
+            list.style.height = (window.innerHeight - top - marginTop - marginBottom) + "px";
+        }
+    </script>
+</body>
+</html>

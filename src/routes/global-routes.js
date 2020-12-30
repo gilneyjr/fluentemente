@@ -24,5 +24,6 @@ routes.get('/login', checkAuthenticated, (req, res) => {
 routes.use('/assets/styles', express.static(path.resolve(__dirname, '..', '..', 'public', 'styles')))
 routes.use('/assets/scripts', express.static(path.resolve(__dirname, '..', '..', 'public', 'scripts')))
 routes.use('/assets/images', express.static(path.resolve(__dirname, '..', '..', 'public', 'images')))
+routes.use('/assets/icons', express.static(path.resolve(__dirname, '..', '..', 'public', 'icons')))
 
 module.exports = routes
